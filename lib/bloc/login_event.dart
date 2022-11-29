@@ -8,7 +8,7 @@ class StatusChange extends LoginEvent {
 }
 
 class LoginInit extends LoginEvent {
-  String email;
+  String username;
   String password;
-  LoginInit(this.email, this.password);
+  LoginInit(this.username, this.password);
 }

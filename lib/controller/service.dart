@@ -22,12 +22,13 @@ class LoginRepo {
     yield* stream.stream;
   }
 
-  void login(String email, password) async {
+  void login(String username, password) async {
     try {
       stream.add(LoginStatus.loading);
       Response response = await post(
           Uri.parse('https://stage.getsetplay.co/api/login.php'),
-          body: {'email': email.trim(), 'password': password});
+          body:
+              jsonEncode({'username': username.trim(), 'password': password}));
 
       if (response.statusCode == 200) {
         data = Requestapi.fromJson(jsonDecode(response.body));

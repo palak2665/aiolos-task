@@ -14,7 +14,7 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  TextEditingController emailController = TextEditingController();
+  TextEditingController usernameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
   @override
@@ -34,8 +34,8 @@ class _LoginScreenState extends State<LoginScreen> {
             alignment: Alignment.centerRight,
             child: FloatingActionButton(
                 onPressed: () {
-                  context.read<LoginBloc>().add(
-                      LoginInit(emailController.text, passwordController.text));
+                  context.read<LoginBloc>().add(LoginInit(
+                      usernameController.text, passwordController.text));
                 },
                 backgroundColor: const Color.fromARGB(255, 72, 195, 252),
                 child: state is LoginLoading
@@ -97,7 +97,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                         spreadRadius: 2.0)
                                   ]),
                               child: TextField(
-                                controller: emailController,
+                                controller: usernameController,
                                 decoration: const InputDecoration(
                                     focusColor: Colors.grey,
                                     hintText: 'Username',

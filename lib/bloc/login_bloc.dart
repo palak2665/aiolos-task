@@ -24,7 +24,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
   late StreamSubscription _repoSubscription;
 
   _loginInit(LoginInit event, Emitter emit) {
-    _repo.login(event.email, event.password);
+    _repo.login(event.username, event.password);
   }
 
   _statusChange(StatusChange event, Emitter emit) {
