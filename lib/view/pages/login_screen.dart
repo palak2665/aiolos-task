@@ -140,7 +140,8 @@ class _LoginScreenState extends State<LoginScreen> {
                             ),
                             state is LoginFailed
                                 ? Padding(
-                                    padding: const EdgeInsets.all(8.0),
+                                    padding: const EdgeInsets.only(
+                                        top: 8.0, left: 8.0),
                                     child: Text(
                                       state.message,
                                       style: const TextStyle(color: Colors.red),
